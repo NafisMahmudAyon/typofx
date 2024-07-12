@@ -1,7 +1,7 @@
 {
-  "name": "advanced-tooltip",
+  "name": "typofx",
   "version": "0.0.1",
-  "description": "React Advanced Tooltip Components",
+  "description": "React Text Effect Components",
   "files": [
     "./lib/"
   ],
@@ -39,7 +39,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NafisMahmudAyon/advanced-tooltip.git"
+    "url": "git+https://github.com/NafisMahmudAyon/typofx.git"
   },
   "keywords": [
     "ui",
@@ -52,14 +52,14 @@
   "author": "Nafis Mahmud Ayon <nafismahmudayon@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NafisMahmudAyon/advanced-tooltip/issues"
+    "url": "https://github.com/NafisMahmudAyon/typofx/issues"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.4"
   },
   "devDependencies": {
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14.2.4",
     "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
