@@ -52,14 +52,8 @@ export const Typewriter: React.FC<TypewriterProps> = ({
     <>{" "}<span className={`${styles} typewriter`}>{displayedText}</span>
       <style>{`
         .typewriter::after {
-          content: "";
           border-right: ${cursorThickness} solid currentcolor;
           animation: blink ${cursorBlinkSpeed}ms step-end infinite;
-        }
-
-        @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0; }
         }
       `}</style>
     </>

@@ -554,13 +554,16 @@ video {
   --tw-contain-style:  ;
 }
 
-/* .typewriter::after {
+.typewriter::after {
   content: "";
-  border-right: var(--cursorThickness, 1px) solid currentcolor; 
-  animation: blink var(--cursorBlinkSpeed, 500ms) step-end infinite; 
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-} */
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
