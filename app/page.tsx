@@ -1,9 +1,35 @@
 // import Image from "next/image";
+'use client'
 
-import { Typewriter } from "./src";
+import { Typewriter } from "typofx";
+// import { Sliced } from "./src/components/Sliced/Sliced";
+import { useState } from "react";
+import { FadeText } from "./src";
+import { NotationText } from "./src/components/NotationText";
+import { DynamicTextAnimator } from "./src";
+
+
 
 export default function Home() {
   const texts = ["developer", "writer", "reader", "human"];
+  const [backgroundColor, setBackgroundColor] = useState('black');
+  const [textColor, setTextColor] = useState('white');
+  const [angle, setAngle] = useState(45);
+  // const [fontFamily, setFontFamily] = useState('Oswald, sans-serif');
+  const [fontSize, setFontSize] = useState('clamp(1.5rem, 1rem + 18vw, 15rem)');
+  const sampleText = "The carbon in our apple pies emerged into consciousness Sea of Tranquility something incredible is waiting to be known made in the interiors of collapsing stars inconspicuous motes of rock and gas.";
+
+
+  const strings = [
+    'Oh thank god, you\'re alright.',
+    'You know, being Caroline taught me a valuable lesson...',
+    'You know what? You win.',
+    'Just go.',
+    'It\'s been fun. Don\'t come back.',
+    '......'
+  ];
+
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -23,6 +49,41 @@ export default function Home() {
           </a>
         </div>
       </div>
+      <DynamicTextAnimator
+        textArray={strings}
+        timeout={10}
+        iterations={15}
+        characters="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%&-+_?/\\="
+        pauseDuration={2000}
+      />
+      <div className="h-[100vw] w-full">a</div>
+      <div>
+        <h1>Fun <NotationText type="box" color="yellow" padding={1} onLoad={false}>Someday</NotationText> Ideas</h1>
+        <ul>
+          <li>Bike the <NotationText type="underline" color="red" onLoad={false}>McKenzie Trail</NotationText></li>
+          <li>Eat at that rooftop bar in Redmond</li>
+          <li>Lake of the Woods in Klamath Falls</li>
+          <li>Stay in <NotationText type="box" color="orange" onLoad={false}>Yahats</NotationText></li>
+          <li>Weekend at Suttle Lodge</li>
+          <li>Go visit the <NotationText type="underline" color="red" onLoad={false}>Painted Hills</NotationText></li>
+        </ul>
+      </div>
+      {/* <main style={{ width: 'min(50ch, 80%)', margin: '0 auto', padding: '100px 0' }}>
+        <h1>The Carbon in Our Apple Pies</h1>
+        <p>{sampleText}</p>
+        <p>
+          Great turbulent clouds something incredible is waiting to be known Jean-François Champollion hundreds of thousands science hearts of the stars.
+          <HighlightedText text="Bits of moving fluff" highlightColor="springgreen" duration={800} inEffect="ease-in" outEffect="ease-out" /> another world brain is the seed of intelligence how far away bits of moving fluff realm of the galaxies?
+        </p>
+      </main> */}
+      {/* <Sliced text="Hello" backgroundColor={backgroundColor}
+        textColor={textColor}
+        angle={angle}
+        // fontFamily={fontFamily}
+        fontSize={fontSize} /> */}
+
+      <FadeText text="Hello, world!" duration={3} />
+      
       <h1>
 Hello
         <Typewriter texts={texts}
